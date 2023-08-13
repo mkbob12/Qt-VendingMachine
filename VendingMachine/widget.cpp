@@ -21,8 +21,11 @@ Widget::~Widget()
     delete ui;
 }
 
-void Widget::onEnable(){
-    if(money <  100){
+
+void Widget::changeMoney(int diff){
+    money += diff;
+    ui->lcdNumber->display(money);
+     if(money <  100){
         ui->PbCoffee->setEnabled(false);
     }
     if(money >= 100){
@@ -41,14 +44,6 @@ void Widget::onEnable(){
         ui->PbMilk->setEnabled(true);
     }
 
-
-
-}
-
-void Widget::changeMoney(int diff){
-    money += diff;
-    ui->lcdNumber->display(money);
-    onEnable();
 
 }
 
