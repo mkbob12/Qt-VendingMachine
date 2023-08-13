@@ -15,8 +15,7 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
     int money = {0};
-    void changeMoney(int x);
-    void moneyChange (int, int&, int&, int&, int&);
+    
 
 private slots:
     void on_pb10_clicked();
