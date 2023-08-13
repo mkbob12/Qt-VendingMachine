@@ -99,7 +99,12 @@ void Widget::on_PbMilk_clicked()
     changeMoney(-200);
 }
 
-void Widget::moneyChange(int money, int &money_500, int &money_100, int &money_50, int &money_10){
+
+void Widget::on_PbReset_clicked()
+{
+    QMessageBox mb;
+    
+
     money_500 = money / 500;
     money = money % 500;
     money_100 = money / 100;
@@ -108,16 +113,6 @@ void Widget::moneyChange(int money, int &money_500, int &money_100, int &money_5
     money = money % 50;
     money_10 = money / 10;
     money = money % 10;
-}
-
-void Widget::on_PbReset_clicked()
-{
-    QMessageBox mb;
-    int money_10;
-    int money_50;
-    int money_100;
-    int money_500;
-    moneyChange(money, money_10, money_50,money_100,money_500);
 
 
     QString app_str;
